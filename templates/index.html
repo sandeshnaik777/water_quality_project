@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Water Quality Checker</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #a8edea, #fed6e3);
+            font-family: 'Arial', sans-serif;
+            min-height: 100vh;
+        }
+        .container {
+            margin-top: 50px;
+            background-color: rgba(255,255,255,0.9);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+        h1 {
+            color: #007BFF;
+            font-weight: bold;
+        }
+        .btn-upload {
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
+        }
+        .btn-upload:hover {
+            background-color: #0056b3;
+        }
+        img {
+            margin-top: 20px;
+            border-radius: 10px;
+            border: 3px solid #007BFF;
+        }
+        .prediction {
+            margin-top: 20px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .clean {
+            color: green;
+        }
+        .dirty {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1>💧 Water Quality Checker 💧</h1>
+        <p class="lead">Upload an image of water to check if it is clean or dirty.</p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" class="form-control form-control-lg" required>
+            <button type="submit" class="btn btn-upload btn-lg mt-3">Check Quality</button>
+        </form>
+
+        {% if img_path %}
+            <h3 class="mt-4">Uploaded Image:</h3>
+            <img src="{{ img_path }}" width="300">
+            <div class="prediction {% if prediction=='CLEAN WATER' %}clean{% else %}dirty{% endif %}">
+                Prediction: {{ prediction }}
+            </div>
+        {% endif %}
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
