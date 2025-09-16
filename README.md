@@ -6,12 +6,14 @@ Hey there! Welcome to the Water Quality Classification project. This is a cool l
 - **Classifies water images**: Upload a photo of water, and the model predicts if it's clean or dirty.
 - **Built with TensorFlow**: Uses deep learning to analyze images like a pro.
 - **Easy to use**: Simple scripts for training your own model or testing with existing ones.
+- **Web App**: Now with a fancy web interface using Flask and Bootstrap!
 
 ## 🚀 Features
 - 🧠 CNN model with data augmentation for better accuracy
 - 📊 Binary classification: Clean vs. Dirty water
 - 🖼️ Works with JPG images
 - 🖥️ User-friendly scripts for training and testing
+- 🌐 Web app for easy image upload and prediction
 - 📁 Organized dataset structure
 
 ## 📋 Requirements
@@ -19,13 +21,14 @@ You'll need these to run the project:
 - Python 3.x
 - TensorFlow (the brain behind the AI)
 - NumPy (for number crunching)
-- Tkinter (for the file picker when testing)
+- Flask (for the web app)
+- Tkinter (for the file picker when testing scripts)
 
 ## 🛠️ Installation
 1. Grab the project files from this repo.
 2. Install the goodies:
    ```
-   pip install tensorflow numpy
+   pip install tensorflow numpy flask
    ```
    (Tkinter usually comes with Python – if not, look it up for your system!)
 
@@ -51,18 +54,28 @@ python train_model.py
 ```
 It'll train for 100 epochs, learn from your data, and save the model as `water_quality_model.h5`. Sit back and watch the magic happen!
 
-### Test the Model
+### Test the Model via Script
 Ready to classify some water? Run:
 ```
 python test_image.py
 ```
 A window pops up – pick an image, and boom! It tells you if it's clean or dirty water.
 
+### Use the Web App
+For a more interactive experience:
+1. Run the Flask app:
+   ```
+   python app.py
+   ```
+2. Open your browser and go to `http://127.0.0.1:5000/`
+3. Upload an image of water using the web interface.
+4. Get instant prediction: Clean or Dirty!
+
 ### Download and Use the Pre-Trained Model
 If you just want to test without training:
 1. Download `water_quality_model.h5` from the releases or wherever it's hosted.
 2. Place it in the project root.
-3. Run `test_image.py` as above – it's ready to go!
+3. Run `test_image.py` or the web app as above – it's ready to go!
 
 ## 🏗️ Model Details
 The CNN has:
