@@ -57,7 +57,7 @@ model = Sequential([
 model.compile(optimizer=Adam(learning_rate=0.001), loss='binary_crossentropy', metrics=['accuracy'])
 
 # Train the model
-model.fit(train_generator, epochs=1000, validation_data=test_generator)
+model.fit(train_generator, epochs=100, validation_data=test_generator)
 
 # Save the model
 model.save(model_path)
