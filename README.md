@@ -18,7 +18,7 @@ Hey there! Welcome to the Water Quality Classification project. This is a cool l
 
 ## 📋 Requirements
 You'll need these to run the project:
-- Python 3.x
+- Python 3.x 
 - TensorFlow (the brain behind the AI)
 - NumPy (for number crunching)
 - Flask (for the web app)
